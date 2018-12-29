@@ -1,5 +1,7 @@
 pipeline { 
+    environment{
     def status
+    }
     agent { label 'Node_Ub' } 
     stages {
         stage('Build') { 
@@ -16,7 +18,9 @@ pipeline {
 mvn compile
 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
 '''
+  environment{
 status = currentBuild.result
+  }
             }
         }
         stage('Test'){
