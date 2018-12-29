@@ -14,11 +14,11 @@ pipeline {
                sh '''
 
 mvn compile
-archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+
 '''
  script {
 def status = currentBuild.result
-print(">>>>>>>>>."+status)
+echo "$status"
   }
             }
         }
