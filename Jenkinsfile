@@ -19,6 +19,7 @@ mvn compile
             steps {
                 sh '''
                 mvn test
+                mvn exec:java -D"exec.mainClass"="com.sample.Basics.Addition"
                 '''
             }
         }
