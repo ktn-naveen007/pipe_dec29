@@ -33,8 +33,11 @@ mvn compile
             steps {
                 echo'testing phase'
                 sh '''
+                export DISPLAY=:0
+
+chmod +x ./Drivers/geckodriver
                 mvn test
-                mvn exec:java -D"exec.mainClass"="com.sample.Basics.Addition"
+               // mvn exec:java -D"exec.mainClass"="com.sample.Basics.Addition"
                 '''
 
                 script {
