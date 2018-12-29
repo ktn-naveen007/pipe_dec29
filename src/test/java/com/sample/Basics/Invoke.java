@@ -13,6 +13,8 @@ public class Invoke {
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability("marionette", true);
 		WebDriver wbDriver = new FirefoxDriver(capabilities);
+		wbDriver.navigate().to("https://www.google.com");
+		System.out.println(">>>>>>>>"+wbDriver.getCurrentUrl());
 	}
 
 }
