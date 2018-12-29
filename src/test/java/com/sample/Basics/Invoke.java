@@ -11,7 +11,7 @@ public class Invoke {
 	
 	@Test
 	public void invokeApp(){
-		System.setProperty("webdriver.gecko.driver",String.format(System.getProperty("user.dir")+"%sDrivers%sgeckodriver",File.pathSeparator));
+		System.setProperty("webdriver.gecko.driver",String.format(System.getProperty("user.dir")+"%sDrivers%sgeckodriver",File.pathSeparator,File.pathSeparator));
 		DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 		capabilities.setCapability("marionette", true);
 		WebDriver wbDriver = new FirefoxDriver(capabilities);
