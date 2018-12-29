@@ -16,10 +16,7 @@ pipeline {
 mvn compile
 
 '''
- script {
-def status = currentBuild.result
-echo "$status"
-  }
+ 
             }
         }
         stage('Test'){
@@ -29,6 +26,11 @@ echo "$status"
                 mvn test
                 mvn exec:java -D"exec.mainClass"="com.sample.Basics.Addition"
                 '''
+
+                script {
+def status = currentBuild.result
+echo "$status"
+  }
             }
         }
     }
