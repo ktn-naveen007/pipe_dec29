@@ -29,23 +29,13 @@ mvn compile
  
             }
         }
-        stage('Test'){
-            steps {
-                echo'testing phase'
-                sh '''
-                export DISPLAY=:1
-
-chmod +x ./Drivers/geckodriver
-                mvn test
-               
-                '''
-
-                script {
-def status = currentBuild.result
-echo "$status"
-  }
-            }
-        }
+       stage('deploy'){
+           steps{
+sh '''
+mvn package
+'''
+           }
+       }
     }
 }
 
