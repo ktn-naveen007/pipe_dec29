@@ -34,6 +34,18 @@ mvn compile
 sh '''
 mvn package
 '''
+stash includes: 'target/*.jar', name: 'test'
+
+           }
+       }
+
+       stage('unstash'){
+
+           steps{
+               dir('unstash'){
+                   unstash 'test'
+               }
+
            }
        }
     }
